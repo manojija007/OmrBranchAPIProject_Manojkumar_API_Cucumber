@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>OMR Branch API Automation</td>
+      <td>30 Jan 2026, 11:50</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.omrbranch.hooks.HooksClass.afterScenario(io.cucumber.java.Scenario)</td>
+              <td>6</td>
+              <td class="duration" data-value="1167066">0.001</td>
+              <td class="duration" data-value="1167066">0.002</td>
+              <td class="duration" data-value="7002400">0.007</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.hooks.HooksClass.beforeScenario(io.cucumber.java.Scenario)</td>
+              <td>6</td>
+              <td class="duration" data-value="222334966">0.222</td>
+              <td class="duration" data-value="222334966">1.325</td>
+              <td class="duration" data-value="1334009800">1.334</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.CommonStep.user_should_verify_the_status_code_is(int)</td>
+              <td>6</td>
+              <td class="duration" data-value="1003833">0.001</td>
+              <td class="duration" data-value="1003833">0.003</td>
+              <td class="duration" data-value="6023000">0.006</td>
+              <td class="failed">83.33%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC001_LoginStep.user_adds_basic_authentication_for_login()</td>
+              <td>2</td>
+              <td class="duration" data-value="125995450">0.125</td>
+              <td class="duration" data-value="125995450">0.250</td>
+              <td class="duration" data-value="251990900">0.251</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC001_LoginStep.user_adds_required_login_headers()</td>
+              <td>2</td>
+              <td class="duration" data-value="213508000">0.213</td>
+              <td class="duration" data-value="213508000">0.422</td>
+              <td class="duration" data-value="427016000">0.427</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC001_LoginStep.user_sends_request_to_the_login_endpoint(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="1398247200">1.398</td>
+              <td class="duration" data-value="1398247200">2.171</td>
+              <td class="duration" data-value="2796494400">2.796</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC001_LoginStep.user_should_verify_the_login_response_body_contains_first_name_and_save_the_logtoken(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="202003900">0.202</td>
+              <td class="duration" data-value="202003900">0.395</td>
+              <td class="duration" data-value="404007800">0.404</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_saves_the_category_id_for_main_category_and_subcategory(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10992800">0.010</td>
+              <td class="duration" data-value="10992800">0.010</td>
+              <td class="duration" data-value="10992800">0.010</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_saves_the_variant_id_of_product(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="17998700">0.017</td>
+              <td class="duration" data-value="17998700">0.017</td>
+              <td class="duration" data-value="17998700">0.017</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sends_request_to_the_category_list_endpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="548006600">0.548</td>
+              <td class="duration" data-value="548006600">0.548</td>
+              <td class="duration" data-value="548006600">0.548</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sends_request_to_the_get_favourites_endpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="558796500">0.558</td>
+              <td class="duration" data-value="558796500">0.558</td>
+              <td class="duration" data-value="558796500">0.558</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sends_request_to_the_manage_favourites_endpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="674818500">0.674</td>
+              <td class="duration" data-value="674818500">0.674</td>
+              <td class="duration" data-value="674818500">0.674</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sends_request_to_the_product_list_endpoint(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="744598200">0.744</td>
+              <td class="duration" data-value="744598200">0.744</td>
+              <td class="duration" data-value="744598200">0.744</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sets_bearer_authorization_using_the_saved_logtoken_for_favourites()</td>
+              <td>1</td>
+              <td class="duration" data-value="5002300">0.005</td>
+              <td class="duration" data-value="5002300">0.005</td>
+              <td class="duration" data-value="5002300">0.005</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sets_bearer_authorization_using_the_saved_logtoken_for_get_favourites()</td>
+              <td>1</td>
+              <td class="duration" data-value="4997400">0.004</td>
+              <td class="duration" data-value="4997400">0.004</td>
+              <td class="duration" data-value="4997400">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sets_headers_for_category_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="7001400">0.007</td>
+              <td class="duration" data-value="7001400">0.007</td>
+              <td class="duration" data-value="7001400">0.007</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sets_headers_for_product_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="4997600">0.004</td>
+              <td class="duration" data-value="4997600">0.004</td>
+              <td class="duration" data-value="4997600">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sets_request_body_with_saved_category_id_and_page_number(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="136005700">0.136</td>
+              <td class="duration" data-value="136005700">0.136</td>
+              <td class="duration" data-value="136005700">0.136</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_sets_request_body_with_saved_variant_id_to_add_to_favourites()</td>
+              <td>1</td>
+              <td class="duration" data-value="9999100">0.009</td>
+              <td class="duration" data-value="9999100">0.009</td>
+              <td class="duration" data-value="9999100">0.009</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_should_verify_the_category_response_message_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="14010500">0.014</td>
+              <td class="duration" data-value="14010500">0.014</td>
+              <td class="duration" data-value="14010500">0.014</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_should_verify_the_favourites_list_response_message_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_should_verify_the_product_response_message_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="32022900">0.032</td>
+              <td class="duration" data-value="32022900">0.032</td>
+              <td class="duration" data-value="32022900">0.032</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.user_should_verify_the_specification_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="17999500">0.017</td>
+              <td class="duration" data-value="17999500">0.017</td>
+              <td class="duration" data-value="17999500">0.017</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.omrbranch.stepdefinition.TC004_AddFavouritesStep.verify_the_favourites_response_message_is(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="24995000">0.024</td>
+              <td class="duration" data-value="24995000">0.024</td>
+              <td class="duration" data-value="24995000">0.024</td>
+              <td class="failed">0.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>24</td>
+            <td>43</td>
+            <td class="duration">0.186</td>
+            <td class="duration">2.796</td>
+            <td class="duration">8.038</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
